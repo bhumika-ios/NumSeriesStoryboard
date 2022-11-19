@@ -8,7 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var txtNumber: UITextField!
+    
+    @IBOutlet var txtView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

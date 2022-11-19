@@ -61,6 +61,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BCR-Hu-DAZ" secondAttribute="bottom" constant="351" id="ya8-4N-rxt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtNumber" destination="CT6-40-Wil" id="r7f-yc-9b8"/>
+                        <outlet property="txtView" destination="yJB-lB-BV1" id="irb-kF-a0u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
