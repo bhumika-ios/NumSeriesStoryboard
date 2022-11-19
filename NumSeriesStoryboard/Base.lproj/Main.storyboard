@@ -23,50 +23,60 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CT6-40-Wil">
-                                <rect key="frame" x="10" y="207" width="373" height="34"/>
+                                <rect key="frame" x="10" y="207" width="283" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yJB-lB-BV1">
-                                <rect key="frame" x="10" y="258" width="373" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCR-Hu-DAZ">
-                                <rect key="frame" x="10" y="432" width="373" height="35"/>
+                                <rect key="frame" x="313" y="206" width="80" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Dispaly"/>
                                 <connections>
                                     <action selector="btnDisplay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vv9-eA-Ba7"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cvc-6T-wSx">
+                                <rect key="frame" x="10" y="278" width="373" height="540"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2Wt-px-E5m">
+                                        <rect key="frame" x="0.0" y="50" width="373" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Wt-px-E5m" id="2gA-ML-thZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="m2x-KD-e7f"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4eX-rE-76A"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CT6-40-Wil" secondAttribute="trailing" constant="10" id="4dW-ND-Aaq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CT6-40-Wil" secondAttribute="trailing" constant="100" id="4dW-ND-Aaq"/>
                             <constraint firstItem="CT6-40-Wil" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="78O-Dp-kOM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CT6-40-Wil" secondAttribute="bottom" constant="577" id="B5t-6S-IWu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M0F-xb-Yne" secondAttribute="trailing" constant="10" id="Cqc-yW-vKa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yJB-lB-BV1" secondAttribute="trailing" constant="10" id="DTO-1q-26a"/>
                             <constraint firstItem="CT6-40-Wil" firstAttribute="top" secondItem="M0F-xb-Yne" secondAttribute="bottom" constant="41" id="GGg-1M-5EA"/>
-                            <constraint firstItem="yJB-lB-BV1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="TiH-v7-a2K"/>
-                            <constraint firstItem="BCR-Hu-DAZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="UEb-a8-GJw"/>
-                            <constraint firstItem="BCR-Hu-DAZ" firstAttribute="top" secondItem="yJB-lB-BV1" secondAttribute="bottom" constant="46" id="Yqr-yK-hAn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cvc-6T-wSx" secondAttribute="trailing" constant="10" id="IsL-uH-ImL"/>
+                            <constraint firstItem="BCR-Hu-DAZ" firstAttribute="leading" secondItem="CT6-40-Wil" secondAttribute="trailing" constant="20" id="SuM-wH-EaK"/>
+                            <constraint firstItem="cvc-6T-wSx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="TfZ-Ot-IPe"/>
+                            <constraint firstItem="BCR-Hu-DAZ" firstAttribute="top" secondItem="M0F-xb-Yne" secondAttribute="bottom" constant="40" id="Xwp-XQ-c0z"/>
                             <constraint firstItem="M0F-xb-Yne" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="dW1-HT-1nD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yJB-lB-BV1" secondAttribute="bottom" constant="432" id="hzt-O4-vBX"/>
+                            <constraint firstItem="BCR-Hu-DAZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dod-bt-qRh"/>
+                            <constraint firstItem="cvc-6T-wSx" firstAttribute="top" secondItem="CT6-40-Wil" secondAttribute="bottom" constant="37" id="gOg-y6-3B9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cvc-6T-wSx" secondAttribute="bottom" id="hVB-Rf-y29"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M0F-xb-Yne" secondAttribute="bottom" constant="652" id="lnS-IH-ffs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BCR-Hu-DAZ" secondAttribute="trailing" constant="10" id="qzS-Ro-vBR"/>
-                            <constraint firstItem="yJB-lB-BV1" firstAttribute="top" secondItem="CT6-40-Wil" secondAttribute="bottom" constant="17" id="tos-lG-Qs3"/>
                             <constraint firstItem="M0F-xb-Yne" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="v53-X3-l8e"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BCR-Hu-DAZ" secondAttribute="bottom" constant="351" id="ya8-4N-rxt"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tblView" destination="cvc-6T-wSx" id="4QK-tJ-WMe"/>
                         <outlet property="txtNumber" destination="CT6-40-Wil" id="r7f-yc-9b8"/>
-                        <outlet property="txtView" destination="yJB-lB-BV1" id="irb-kF-a0u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,9 +85,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

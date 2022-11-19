@@ -7,26 +7,40 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+   
+    
     @IBOutlet var txtNumber: UITextField!
+    @IBOutlet var tblView: UITableView!
     
     @IBOutlet var txtView: UITextView!
+    var displayArray = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        tblView.dataSource = self
+        tblView.delegate = self
         // Do any additional setup after loading the view.
     }
     @IBAction func btnDisplay(_ sender:Any){
         
         let enterNumber = Int(txtNumber.text!)
         var index = 1
-        var displayArray = [Int]()
+        
         
         for number in index...enterNumber!{
             print(number)
             displayArray.append(number)
-            txtView.text = "\(displayArray)"
+            tblView.reloadData()
         }
     }
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return displayArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        cell.textLabel?.text = "\(displayArray[indexPath.row])"
+        return cell
+    }
 }
 
