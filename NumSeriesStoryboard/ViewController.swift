@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     }
     @IBAction func btnDisplay(_ sender:Any){
         
+        let enterNumber = Int(txtNumber.text!)
     }
 
 }
