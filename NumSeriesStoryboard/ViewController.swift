@@ -18,6 +18,13 @@ class ViewController: UIViewController {
     @IBAction func btnDisplay(_ sender:Any){
         
         let enterNumber = Int(txtNumber.text!)
+        var index = 1
+        
+        
+        for number in index...enterNumber!{
+            print(number)
+            txtView.text = "\(number)"
+        }
     }
 
 }
