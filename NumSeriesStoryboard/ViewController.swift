@@ -19,11 +19,12 @@ class ViewController: UIViewController {
         
         let enterNumber = Int(txtNumber.text!)
         var index = 1
-        
+        var displayArray = [Int]()
         
         for number in index...enterNumber!{
             print(number)
-            txtView.text = "\(number)"
+            displayArray.append(number)
+            txtView.text = "\(displayArray)"
         }
     }
 
