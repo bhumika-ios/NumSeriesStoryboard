@@ -14,6 +14,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet var tblView: UITableView!
     
     @IBOutlet var txtView: UITextView!
+   
+    var index = 1
     var displayArray = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +25,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     @IBAction func btnDisplay(_ sender:Any){
         
-        let enterNumber = Int(txtNumber.text!)
-        var index = 1
         
+        NumberSeries()
         
-        for number in index...enterNumber!{
-            print(number)
-            displayArray.append(number)
-            tblView.reloadData()
-        }
+//        for number in index...enterNumber!{
+//            print(number)
+//
+//                displayArray.append(number)
+//                tblView.reloadData()
+//
+//
+//        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return displayArray.count
@@ -41,6 +45,23 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         cell.textLabel?.text = "\(displayArray[indexPath.row])"
         return cell
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == displayArray.count - 1 {
+            NumberSeries()
+        }
+    }
+    func NumberSeries() {
+        let enterNumber = Int(txtNumber.text!)
+        for number in index...enterNumber!{
+            print(number)
+           
+            displayArray.append(number)
+           // displayArray.append(displayArray.last! + 1)
+                tblView.reloadData()
+            
+           
+        }
     }
 }
 
